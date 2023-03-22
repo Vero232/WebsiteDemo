@@ -1,4 +1,5 @@
-﻿using WebsiteDemo.Services;
+﻿
+using WebsiteDemo.Services;
 
 namespace WebsiteDemo.Extensions
 {
@@ -8,6 +9,7 @@ namespace WebsiteDemo.Extensions
         {
             services.AddScoped<MenuService>();
             services.AddScoped<PageService>();
+            services.AddScoped<NodeContentService>();
         
         }
     }
