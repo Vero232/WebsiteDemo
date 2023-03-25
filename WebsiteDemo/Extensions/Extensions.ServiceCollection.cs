@@ -1,4 +1,7 @@
 ﻿
+using WebsiteDemo.Models;
+using WebsiteDemo.Models.ContentModels;
+using WebsiteDemo.Models.DTOs;
 using WebsiteDemo.Services;
 
 namespace WebsiteDemo.Extensions
@@ -10,7 +13,9 @@ namespace WebsiteDemo.Extensions
             services.AddScoped<MenuService>();
             services.AddScoped<PageService>();
             services.AddScoped<NodeContentService>();
-        
+            services.AddScoped<MappingService<PageDTO>>();
+            services.AddScoped<MappingService<TitleDTO>>();
+
         }
     }
 }
