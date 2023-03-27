@@ -1,17 +1,21 @@
 ﻿using WebsiteDemo.Models;
 using Umbraco.Cms.Web.Common;
 using WebsiteDemo.Interfaces;
+using Umbraco.Cms.Core.Models.PublishedContent;
 
 namespace WebsiteDemo.Services
 {
     public class MenuService : IMenuService
     {
+        private const string _headerMenuAlias = "menuItems";
+        private const string _contentNodeAlias = "website";
+
         private readonly UmbracoHelper _umbracoHelper;
 
         public MenuService(IUmbracoHelperAccessor umbracoHelperAccessor)
         {
-            var sucess = umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper);
-            if (!sucess)
+            var success = umbracoHelperAccessor.TryGetUmbracoHelper(out var umbracoHelper);
+            if (!success)
             {
                 return;
             }
@@ -21,9 +25,9 @@ namespace WebsiteDemo.Services
 
         public IEnumerable<MenuItem> GetHeaderMenu()
         {
-            var menu = _umbracoHelper.ContentAtRoot().Select(x => new MenuItem(x));
+            var rootNode = _umbracoHelper.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == _contentNodeAlias);
 
-            return menu;
+            return rootNode.Value<IEnumerable<IPublishedContent>>(_headerMenuAlias).Select(x => new MenuItem(x));
         }
 
     }

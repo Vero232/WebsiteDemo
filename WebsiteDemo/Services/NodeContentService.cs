@@ -76,7 +76,8 @@ namespace WebsiteDemo.Services
 
             }
 
-            return JsonSerializer.Serialize(content);
+
+            return JsonSerializer.Serialize(content.ToArray());
         }
 
     }

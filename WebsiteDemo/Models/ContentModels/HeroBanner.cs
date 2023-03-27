@@ -10,7 +10,7 @@ namespace WebsiteDemo.Models.ContentModels
         public string Description { get; set; }
         public Link ButtonLink { get; set; }
         public string ButtonName => ButtonLink.Name;
-        public string ButtonTarget => ButtonLink.Url;
-        public string ButtonURL => ButtonLink.Target;
+        public string ButtonTarget => ButtonLink.Target;
+        public string ButtonURL => ButtonLink.Url;
     }
 }
