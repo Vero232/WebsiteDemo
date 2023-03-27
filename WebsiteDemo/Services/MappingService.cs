@@ -1,25 +1,32 @@
-﻿using Umbraco.Cms.Core.Mapping;
-using Umbraco.Cms.Core.Models;
-using Umbraco.Cms.Core.Models.PublishedContent;
-using WebsiteDemo.Models;
+﻿using AutoMapper;
+using System.Reflection;
+using WebsiteDemo.Interfaces;
+
 
 namespace WebsiteDemo.Services
 {
-    public class MappingService<T> where T : class
+    public class MappingService : IMappingService
     {
-        private readonly IUmbracoMapper _umbracoMapper;
 
-        public MappingService(IUmbracoMapper umbracoMapper)
+        private readonly IMapper _mapper;
+
+        public MappingService(IMapper mapper)
         {
 
-            _umbracoMapper = umbracoMapper;
+            _mapper = mapper;
         }
-        public TReturn MapContent<T, TReturn>(T content)
+
+        public TReturn MapContent<T, TReturn>(T content) where T : class
         {
 
-           var mappedContent = _umbracoMapper.Map<T, TReturn>(content);
+
+            var mappedContent = _mapper.Map<T, TReturn>(content);
+
 
             return mappedContent;
+
         }
+
     }
+
 }

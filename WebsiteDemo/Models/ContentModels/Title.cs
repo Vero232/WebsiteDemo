@@ -1,6 +1,4 @@
-﻿using Umbraco.Cms.Core.Models.PublishedContent;
-
-namespace WebsiteDemo.Models.ContentModels
+﻿namespace WebsiteDemo.Models.ContentModels
 {
     public class Title  
     {

@@ -1,3 +1,4 @@
+using AutoMapper;
 using WebsiteDemo.Extensions;
 
 namespace WebsiteDemo
@@ -52,6 +53,8 @@ namespace WebsiteDemo
                 });
             });
             services.AddServices();
+
+            services.AddAutoMapper(x => x.CreateMissingTypeMaps = true);
         }
 
         /// <summary>

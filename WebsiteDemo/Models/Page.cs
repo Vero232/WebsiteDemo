@@ -1,6 +1,4 @@
-﻿using System.Runtime.Serialization;
-using Umbraco.Cms.Core.Models.PublishedContent;
-using Umbraco.Extensions;
+﻿using Umbraco.Cms.Core.Models.PublishedContent;
 
 namespace WebsiteDemo.Models
 {
