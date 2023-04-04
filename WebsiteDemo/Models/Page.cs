@@ -2,10 +2,8 @@
 
 namespace WebsiteDemo.Models
 {
- 
     public class Page
     {
-
         public int Id { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }
@@ -15,8 +13,6 @@ namespace WebsiteDemo.Models
             Url = content.Url();
             Title = content.Name();
             Id = content.Id;
-
         }
     }
-    
 }

@@ -7,9 +7,6 @@ namespace WebsiteDemo.Services
 {
     public class MenuService : IMenuService
     {
-        private const string _headerMenuAlias = "menuItems";
-        private const string _contentNodeAlias = "website";
-
         private readonly UmbracoHelper _umbracoHelper;
 
         public MenuService(IUmbracoHelperAccessor umbracoHelperAccessor)
@@ -25,10 +22,9 @@ namespace WebsiteDemo.Services
 
         public IEnumerable<MenuItem> GetHeaderMenu()
         {
-            var rootNode = _umbracoHelper.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == _contentNodeAlias);
+            var rootNode = _umbracoHelper.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == DocumentTypes.contentNodeAlias);
 
-            return rootNode.Value<IEnumerable<IPublishedContent>>(_headerMenuAlias).Select(x => new MenuItem(x));
+            return rootNode.Value<IEnumerable<IPublishedContent>>(PropertyAlias.headerMenuAlias).Select(x => new MenuItem(x));
         }
-
     }
 }

@@ -12,10 +12,8 @@ using WebsiteDemo.Interfaces;
 namespace MyWebsite.Controllers
 {
 
-	//~/Umbraco/Api/ControllerName/Method
 	public class ContentController : UmbracoApiController
 	{
-	
 		private readonly IPageService _pageService;
 
 		private readonly INodeContentService _nodeContentService;
@@ -27,16 +25,13 @@ namespace MyWebsite.Controllers
 			_nodeContentService = nodeContentService;
 		}
 
-
 		public string GetContent(string url)
 		{
-
 			var page = _pageService.GetPage(url);
 
 			var getContent = _nodeContentService.GetNodeContent(page);
 
 			return getContent;
 		}
-
 	}
 }

@@ -18,16 +18,13 @@ namespace WebsiteDemo.Services
             }
 
             _umbracoContext = umbracoContext;
-
         }
 
         public IPublishedContent GetPage(string url)
         {
-
             var page = _umbracoContext.Content.GetByRoute(url);
 
             return page;
         }
-
     }
 }

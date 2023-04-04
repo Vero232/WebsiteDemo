@@ -1,5 +1,6 @@
 using AutoMapper;
 using WebsiteDemo.Extensions;
+using WebsiteDemo.Models.ContentModels;
 
 namespace WebsiteDemo
 {
@@ -54,7 +55,7 @@ namespace WebsiteDemo
             });
             services.AddServices();
 
-            services.AddAutoMapper(x => x.CreateMissingTypeMaps = true);
+            services.AddMapper();
         }
 
         /// <summary>

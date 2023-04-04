@@ -3,6 +3,5 @@
     public class Title  
     {
         public string TitleText { get; set; }
-
     }
 }

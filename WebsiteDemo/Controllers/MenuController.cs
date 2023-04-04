@@ -4,7 +4,6 @@ using WebsiteDemo.Interfaces;
 
 namespace WebsiteDemo.Controllers
 {
-	//~/Umbraco/Api/ControllerName/Method
 	public class MenuController : UmbracoApiController
 	{
 		private readonly IMenuService _menuService;
